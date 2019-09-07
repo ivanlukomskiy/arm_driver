@@ -42,7 +42,7 @@ while True:
         control = 100
     if control < -100:
         control = -100
-    print("control: {}, angle: {}, desired_angle: {}".format(control, angle, desired_angle))
+    # print("control: {}, angle: {}, desired_angle: {}".format(control, angle, desired_angle))
 
     print("angle: {}, diff: {}".format(angle, diff))
     SERVO_CONTROL.x.set(-control * 0.3)

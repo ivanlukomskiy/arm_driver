@@ -37,7 +37,7 @@ class AxisControl:
         self.pwm.start(0)
 
     def set(self, value):
-        print('setting {} to {}'.format(self.name, value))
+        # print('setting {} to {}'.format(self.name, value))
         self.v = value
         self.apply()
 
@@ -49,7 +49,7 @@ class AxisControl:
         position = left_position + (right_position - left_position) * (v * self.multiplier + self.shift + 100) / 200
         value = position * 100 / ms_per_cycle
         self.pwm.start(value)
-        print('{} set to {}, value {}'.format(self.name, self.v, value))
+        # print('{} set to {}, value {}'.format(self.name, self.v, value))
 
     def limit_changed(self, value):
         if value == self.left_limit_pin:
