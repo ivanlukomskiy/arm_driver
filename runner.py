@@ -10,7 +10,7 @@ SERVO_CONTROL.x.set(0)
 STEP = 0.001
 POS_PERIOD = 5
 LOG_TICKS = 500
-POSITIONS = [0]
+POSITIONS = [0, 45, -45]
 
 ticks = 0
 desired_angle_index = 0
