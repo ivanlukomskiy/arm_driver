@@ -30,5 +30,5 @@ def read_angle():
         x_val = float(bitstring.Bits(uint=x, length=8).unpack('int')[0])
         y_val = float(bitstring.Bits(uint=y, length=8).unpack('int')[0])
         angle = math.degrees(math.atan2(-y_val, x_val))
-        print("({}, {}) -> === {}".format(x_val, y_val, angle))
+        # print("({}, {}) -> === {}".format(x_val, y_val, angle))
         return angle

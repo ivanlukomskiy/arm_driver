@@ -74,7 +74,7 @@ class ServoControl:
             name="x",
             pin=35,
             shift=-1.5,
-            multiplier=0.2,
+            multiplier=0.1,
             left_limit_pin=None,
             right_limit_pin=None
             # left_limit_pin=7,
