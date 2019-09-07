@@ -45,6 +45,6 @@ while True:
     print("control: {}, angle: {}, desired_angle: {}".format(control, angle, desired_angle))
 
     print("angle: {}, diff: {}".format(angle, diff))
-    SERVO_CONTROL.x.set(-control * 0.1)
+    SERVO_CONTROL.x.set(-control * 0.3)
     time.sleep(STEP)
     ticks = ticks + 1
