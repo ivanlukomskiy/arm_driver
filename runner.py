@@ -15,7 +15,7 @@ ticks = 0
 desired_angle_index = 0
 desired_angle = POSITIONS[desired_angle_index]
 
-pid = PID(3, 1, 0.03, setpoint=0)
+pid = PID(2, 1, 0.03, setpoint=0)
 
 
 def transform(angle):
