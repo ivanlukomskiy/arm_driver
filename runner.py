@@ -38,7 +38,7 @@ while True:
 
     pid.setpoint = desired_angle
     control = pid(diff)
-    print("control: {}")
+    print("control: {}".format(control))
 
     print("angle: {}, diff: {}".format(angle, diff))
     SERVO_CONTROL.x.set(diff)
