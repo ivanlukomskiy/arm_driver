@@ -8,11 +8,19 @@ SERVO_CONTROL.x.set(0)
 
 STEP = 0.01
 POS_PERIOD = 5
-POSITIONS = [135, 45, 90]
+POSITIONS = [-45, 45, 0]
 
 ticks = 0
 desired_angle_index = 0
 desired_angle = POSITIONS[desired_angle_index]
+
+
+def transform(angle):
+    if angle > 0:
+        return angle - 90
+    else:
+        return angle + 270
+
 
 while True:
     if ticks > POS_PERIOD / STEP:
@@ -22,7 +30,7 @@ while True:
         desired_angle = POSITIONS[desired_angle_index]
         ticks = 0
 
-    angle = accel.read_angle()
+    angle = transform(accel.read_angle())
     diff = - desired_angle + angle
     print("angle: {}, diff: {}".format(angle, diff))
     SERVO_CONTROL.x.set(diff)
