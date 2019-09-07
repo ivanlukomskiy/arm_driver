@@ -9,7 +9,7 @@ SERVO_CONTROL.x.set(0)
 
 STEP = 0.01
 POS_PERIOD = 5
-POSITIONS = [-45, 45, 0]
+POSITIONS = [0]
 
 ticks = 0
 desired_angle_index = 0
