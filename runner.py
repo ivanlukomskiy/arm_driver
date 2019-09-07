@@ -8,8 +8,9 @@ SERVO_CONTROL.x.set(0)
 
 desired_angle = 90
 
-SERVO_CONTROL.x.set(10)
-time.sleep(0.3)
+time.sleep(3)
+SERVO_CONTROL.x.set(100)
+time.sleep(1)
 SERVO_CONTROL.x.set(0)
 
 
