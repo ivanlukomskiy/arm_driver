@@ -6,7 +6,8 @@ import accel
 accel.init()
 SERVO_CONTROL.x.set(0)
 
+desired_angle = 90
+
 while True:
-    print('sleeping')
-    accel.read_angle()
+    print(accel.read_angle())
     time.sleep(1)
