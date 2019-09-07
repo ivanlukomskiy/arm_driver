@@ -1,6 +1,7 @@
 import time
 
 from servo import SERVO_CONTROL
+from simple_pid import PID
 import accel
 
 accel.init()
@@ -14,6 +15,7 @@ ticks = 0
 desired_angle_index = 0
 desired_angle = POSITIONS[desired_angle_index]
 
+pid = PID(1, 0.1, 0.05, setpoint=1)
 
 def transform(angle):
     if angle > 0:
@@ -32,7 +34,9 @@ while True:
 
     angle = transform(accel.read_angle())
     diff = - desired_angle + angle
+    control = pid(diff)
     print("angle: {}, diff: {}".format(angle, diff))
+    print("control: {}".format(control))
     SERVO_CONTROL.x.set(diff)
     time.sleep(STEP)
     ticks = ticks + 1
