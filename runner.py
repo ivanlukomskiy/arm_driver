@@ -37,7 +37,7 @@ while True:
     diff = - desired_angle + angle
 
     pid.setpoint = desired_angle
-    control = pid(diff)
+    control = pid(angle)
     print("control: {}".format(control))
 
     print("angle: {}, diff: {}".format(angle, diff))
