@@ -7,8 +7,9 @@ import accel
 accel.init()
 SERVO_CONTROL.x.set(0)
 
-STEP = 0.01
+STEP = 0.001
 POS_PERIOD = 5
+LOG_TICKS = 500
 POSITIONS = [0]
 
 ticks = 0
@@ -44,7 +45,9 @@ while True:
         control = -100
     # print("control: {}, angle: {}, desired_angle: {}".format(control, angle, desired_angle))
 
-    print("angle: {}, diff: {}".format(angle, diff))
+    if ticks % LOG_TICKS == 0:
+        print("angle: {}, diff: {}".format(angle, diff))
+
     SERVO_CONTROL.x.set(-control * 0.3)
     time.sleep(STEP)
     ticks = ticks + 1
