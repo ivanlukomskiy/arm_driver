@@ -11,5 +11,6 @@ desired_angle = 90
 while True:
     angle = accel.read_angle()
     diff = desired_angle - angle
-    SERVO_CONTROL.x.set(diff)
+    print("angle: {}, diff: {}".format(angle, diff))
+    # SERVO_CONTROL.x.set(diff)
     time.sleep(0.05)
