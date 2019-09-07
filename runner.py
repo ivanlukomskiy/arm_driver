@@ -15,7 +15,7 @@ ticks = 0
 desired_angle_index = 0
 desired_angle = POSITIONS[desired_angle_index]
 
-pid = PID(0.8, 0.2, 0.03, setpoint=0)
+pid = PID(1, 0.3, 0.03, setpoint=0)
 
 
 def transform(angle):
@@ -37,7 +37,7 @@ while True:
     diff = - desired_angle + angle
 
     pid.setpoint = desired_angle
-    control = pid(angle)
+    control = pid(angle) * 2
     if control > 100:
         control = 100
     if control < -100:
