@@ -36,18 +36,20 @@ while True:
 
     angle = transform(accel.read_angle())
     diff = desired_angle - angle
-
-    pid.setpoint = desired_angle
-    control = -pid(angle)
-    if control > 100:
-        control = 100
-    if control < -100:
-        control = -100
-    # print("control: {}, angle: {}, desired_angle: {}".format(control, angle, desired_angle))
-
-    if ticks % LOG_TICKS == 0:
-        print("angle: {}, diff: {}, desired: {}, control: {}".format(angle, diff, desired_angle, control))
-
-    SERVO_CONTROL.x.set(control * 0.3)
+    SERVO_CONTROL.x.set(0)
     time.sleep(STEP)
-    ticks = ticks + 1
+
+    # pid.setpoint = desired_angle
+    # control = -pid(angle)
+    # if control > 100:
+    #     control = 100
+    # if control < -100:
+    #     control = -100
+    # # print("control: {}, angle: {}, desired_angle: {}".format(control, angle, desired_angle))
+    #
+    # if ticks % LOG_TICKS == 0:
+    #     print("angle: {}, diff: {}, desired: {}, control: {}".format(angle, diff, desired_angle, control))
+    #
+    # SERVO_CONTROL.x.set(control * 0.3)
+    # time.sleep(STEP)
+    # ticks = ticks + 1
