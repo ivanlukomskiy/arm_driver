@@ -36,7 +36,7 @@ while True:
 
     angle = transform(accel.read_angle())
     diff = desired_angle - angle
-    SERVO_CONTROL.x.set(0)
+    SERVO_CONTROL.x.set(desired_angle)
     time.sleep(STEP)
 
     # pid.setpoint = desired_angle
